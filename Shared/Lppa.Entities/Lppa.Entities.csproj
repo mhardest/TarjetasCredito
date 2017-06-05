@@ -39,10 +39,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityBase.cs" />
+    <Compile Include="Domain\ClienteExtension.cs" />
+    <Compile Include="Domain\ClienteTitular.cs" />
+    <Compile Include="Domain\CuentaBancaria.cs" />
+    <Compile Include="Domain\Direccion.cs" />
+    <Compile Include="Domain\EmisorTarjetaCredito.cs" />
+    <Compile Include="Domain\EntityBase.cs" />
+    <Compile Include="Domain\EstadoCivil.cs" />
+    <Compile Include="Domain\EstadoDeSolicitud.cs" />
+    <Compile Include="Domain\EstadoTarjetaCredito.cs" />
+    <Compile Include="Domain\Firma.cs" />
+    <Compile Include="Domain\Foto.cs" />
+    <Compile Include="Domain\Localidad.cs" />
+    <Compile Include="Domain\Pais.cs" />
+    <Compile Include="Domain\Provincia.cs" />
+    <Compile Include="Domain\Persona.cs" />
+    <Compile Include="Domain\PuntosEmisionTarjetas.cs" />
+    <Compile Include="Domain\Sexo.cs" />
+    <Compile Include="Domain\Solicitud.cs" />
+    <Compile Include="Domain\TarjetaDeCredito.cs" />
+    <Compile Include="Domain\Telefono.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proyecto.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

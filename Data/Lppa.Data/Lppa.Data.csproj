@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="DataAccessComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProyectoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
