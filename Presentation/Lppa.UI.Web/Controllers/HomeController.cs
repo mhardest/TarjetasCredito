@@ -29,7 +29,14 @@ namespace Lppa.UI.Web.Controllers
 
         public ActionResult AltaSolicitud()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Alta de Tarjetas.";
+
+            return View();
+        }
+
+        public ActionResult DatosAdicionales()
+        {
+            ViewBag.Message = "Datos Adicionales.";
 
             return View();
         }

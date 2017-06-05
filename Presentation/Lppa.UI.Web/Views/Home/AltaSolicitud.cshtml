@@ -2,9 +2,10 @@
 @{
     ViewBag.Title = "AltaSolicitud";
 }
-
+<html>
 <head>
     <script src="~/Scripts/Validaciones.js"></script>
+    <script src="~/Scripts/enviar.js"></script>
 </head>
 <body>
     <div class="container">
@@ -105,6 +106,9 @@
             </div>
         </div>
         <br>
+        
+        <input type="button" class="btn btn-success" value="Confirmar"  OnClick="location.href='DatosAdicionales'">
+
         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" onclick="validarCasado(estadoCivil.value);">Agregar Conyuge</button>
         <div id="demo" class="collapse">
             <br>
