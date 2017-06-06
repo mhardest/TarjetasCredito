@@ -40,5 +40,12 @@ namespace Lppa.UI.Web.Controllers
 
             return View();
         }
+
+        public ActionResult TarjetaAdicional()
+        {
+            ViewBag.Message = "Alta Tarjeta Adicional.";
+
+            return View();
+        }
     }
 }

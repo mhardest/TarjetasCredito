@@ -253,6 +253,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\AltaSolicitud.cshtml" />
     <Content Include="Views\Home\DatosAdicionales.cshtml" />
+    <Content Include="Views\Home\TarjetaAdicional.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

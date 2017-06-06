@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "Alta Tarjeta Adicional";
+}
+
+<h2>Alta Tarjeta Adicional</h2>
+
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <label for="dniCuilTitular">Ingrese Dni o Cuil del Titular:</label>
+            <input type="text" class="form-control" id="dniCuilTitular">
+
+        </div>
+    </div>
+       <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Buscar</button>
+        </div>
+    </div>
+    <div id="demo" class="collapse">
+        <br>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="apellidoNombre">Apellido y Nombre:</label>
+                <input type="text" required class="form-control" id="apellidoNombre">
+            </div>
+            <div class="col-sm-2">
+                <label for="fechaNacimiento">Fecha Nacimiento:</label>
+                <input type="date" class="form-control" id="fechaNacimiento">
+            </div>
+            <div class="col-sm-2">
+                <label for="sexo">Sexo:</label>
+                <select class="form-control" id="sexo">
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <label for="estadoCivil">Estado Civil:</label>
+                <select class="form-control" id="estadoCivil">
+                    <option value="Soltero">Soltero/a</option>
+                    <option value="Casado">Casado/a</option>
+                    <option value="Divorciado">Divorciado/a</option>
+                    <option value="Viudo">Viudo/a</option>
+                </select>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="tipoDocumento">Tipo de Documento:</label>
+                <select class="form-control" id="tipoDocumento">
+                    <option value="DU">Documento Unico</option>
+                    <option value="LC">Libreta Civica</option>
+                    <option value="LE">Libreta de Enrolamiento</option>
+                    <option value="PS">Pasaporte</option>
+                    <option value="OT">Otros</option>
+                </select>
+            </div>
+
+            <div class="col-sm-3">
+                <label for="numeroDocumento">Nro Documento:</label>
+                <input type="number" class="form-control" id="numeroDocumento" placeholder="Sin puntos(.)">
+            </div>
+
+            <div class="col-sm-3">
+                <label for="cuilCuit">CUIL/CUIT:</label>
+                <input type="number" class="form-control" id="cuilCuit" placeholder="Sin guiones(-)">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="calle">Calle:</label>
+                <input type="text" class="form-control" id="calle">
+            </div>
+            <div class="col-sm-1">
+                <label for="numero">Numero:</label>
+                <input type="number" class="form-control" id="numero">
+            </div>
+            <div class="col-sm-1">
+                <label for="piso">Piso:</label>
+                <input type="number" class="form-control" id="piso">
+            </div>
+            <div class="col-sm-1">
+                <label for="dpto">Dpto:</label>
+                <input type="text" class="form-control" id="dpto" onChange="validarSiNumero(this.value);">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="cPostal">Codigo Postal:</label>
+                <input type="number" class="form-control" id="cPostal">
+            </div>
+            <div class="col-sm-4">
+                <label for="ciudad">Ciudad:</label>
+                <input type="text" class="form-control" id="ciudad">
+            </div>
+            <div class="col-sm-4">
+                <label for="provincia">Provincia:</label>
+                <input type="text" class="form-control" id="provincia">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-2">
+                <label for="codigoAreaFijo">Cod Area:</label>
+                <input type="number" class="form-control" id="codigoAreaFijo">
+            </div>
+            <div class="col-sm-4">
+                <label for="numTelefonoFijo">Numero Telefono:</label>
+                <input type="number" class="form-control" id="numTelefonoFijo">
+            </div>
+            <div class="col-sm-2">
+                <label for="codigoAreaCel">Cod Area Cel:</label>
+                <input type="number" class="form-control" id="codigoAreaCel">
+            </div>
+            <div class="col-sm-3">
+                <label for="numTelefonoCel">Numero Celular:</label>
+                <input type="number" class="form-control" id="numTelefonoCel">
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="situacionLaboral">Situacion Laboral:</label>
+                <input type="text" class="form-control" id="situacionLaboral">
+            </div>
+            <div class="col-sm-6">
+                <label for="ingresos">Ingresos Mensuales:</label>
+                <input type="number" class="form-control" id="ingresos">
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
