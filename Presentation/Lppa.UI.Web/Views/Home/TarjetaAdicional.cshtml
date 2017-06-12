@@ -4,7 +4,8 @@
 }
 
 <h2>Alta Tarjeta Adicional</h2>
-
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/Validaciones.js"></script>
 <div class="container">
     <br>
     <div class="row">
@@ -17,10 +18,10 @@
        <br>
     <div class="row">
         <div class="col-sm-3">
-            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Buscar</button>
+            <button type="button" class="btn btn-info" id="verificaAdicional" onclick="validarTitular();">Buscar</button>
         </div>
     </div>
-    <div id="demo" class="collapse">
+    <div id="mostrarDatosAdicional" class="collapse">
         <br>
         <div class="row">
             <div class="col-sm-3">
@@ -128,13 +129,22 @@
         <br>
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <label for="situacionLaboral">Situacion Laboral:</label>
                 <input type="text" class="form-control" id="situacionLaboral">
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <label for="ingresos">Ingresos Mensuales:</label>
                 <input type="number" class="form-control" id="ingresos">
+            </div>
+
+            <div class="col-sm-3">
+                <label for="cTipoTarjeta">Tipo Tarjeta:</label>
+                <select class="form-control" id="cTipoTarjeta">
+                    <option value="Amex">American Express</option>
+                    <option value="Visa">Master Card</option>
+                    <option value="Master">Visa</option>
+                </select>
             </div>
         </div>
         <br>

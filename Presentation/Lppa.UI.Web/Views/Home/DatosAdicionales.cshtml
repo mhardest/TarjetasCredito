@@ -1,37 +1,109 @@
-﻿
+﻿<!doctype html>
 @{
     ViewBag.Title = "DatosAdicionales";
 }
+<html>
+<head>
 
-<h2>Datos Adicionales</h2>
+    <script src="~/Scripts/VerImagen.js"></script>
+    <script src="~/Scripts/WebCam.js"></script>
+    
+</head>
+<body>
+    <h2>Datos Adicionales</h2>
+    <div class="container">
+        <br>
 
-<div class="container">
-    <br>
-    <div class="row">
-        <div class="col-sm-3">
-            <label for="agregarImagen">Agregar Foto:</label>
-            <input name="uploadedfileFoto" type="file" />
+        <div class="row">
+
+            <div class="col-sm-8">
+                <h4>Agregar Foto:</h4>
+                <button type="button" class="btn btn-warning btn-file" data-toggle="modal" data-target="#myModal">Capturar   Imagen</button>               
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="results" style="display:none"></div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Toma de Imagen para SATC</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="foto">
+                            <div id="my_camera"></div>
+                            <!-- First, include the Webcam.js JavaScript Library -->
+
+                            <!-- Configure a few settings and attach camera -->
+                            <script language="JavaScript">
+                            Webcam.set({
+                                width: 320,
+                                height: 240,
+                                image_format: 'jpeg',
+                                jpeg_quality: 90
+                            });
+                            Webcam.attach('#my_camera');
+                            </script>
+                           
+                            <!-- A button for taking snaps -->
+                            <form>
+                                <div id="pre_take_buttons">
+                                    <input type=button class="btn btn-success" value="Capturar" onClick="preview_snapshot()">
+                                </div>
+                                <div id="post_take_buttons" style="display:none">
+                                    <input type=button class="btn btn-danger" value="Volver a Capturar" onClick="cancel_preview()">
+                                    <input type=button class="btn btn-success" value="Aceptar" onClick="save_photo()" style="font-weight:bold;">
+                                </div>
+                            </form>
+                            <!-- Code to handle taking the snapshot and displaying it locally -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="closeModal" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="dni">
+            <div class="col-sm-8">
+                <h4>Agregar Dni:</h4>
+                <label class="btn btn-warning btn-file">
+                    Seleccionar Archivo <input type="file" accept="image/gif, image/jpeg, image/png" style="display: none;" onchange="readURLDni(this); ">
+                </label>
+
+            </div>
+            <div class="col-sm-4">
+                <img id="Dni" src="#" alt="your image" style="display:none" />
+            </div>
+        </div>
+
+        <div class="row" id="firma">
+            <div class="col-sm-8">
+                <h4>Agregar Firma:</h4>
+                <label class="btn btn-warning btn-file">
+                    Seleccionar Archivo <input type="file" accept="image/gif, image/jpeg, image/png" style="display:none;" onchange="readURLFirma(this)">
+                </label>
+            </div>
+            <div class="col-sm-4">
+                <img id="Firma" src="#" alt="your image" style="display:none" />
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-success btn-lg btn-block">Confirmar</button>
+            </div>
+            <div class="col-sm-3">
+                <input type="button" class="btn default btn-lg btn-block" value="Cancelar" OnClick="location.href='AltaSolicitud'">
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-3">
-            <label for="agregarDni">Agregar Imagen DNI:</label>
-            <input  name="uploadedfileDni" type="file" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-3">
-            <label for="agregarFirma">Agregar Firma:</label>
-            <input name="uploadedfileFirma" type="file" />
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-3">
-            <button type="button" class="btn btn-success btn-lg btn-block">Confirmar</button>
-        </div>
-        <div class="col-sm-3">
-            <input type="button" class="btn default btn-lg btn-block" value="Cancelar" OnClick="location.href='AltaSolicitud'">
-        </div>
-    </div>
-</div>
+</body>
+</html>
+

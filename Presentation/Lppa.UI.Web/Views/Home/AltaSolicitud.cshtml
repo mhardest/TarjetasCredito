@@ -116,21 +116,26 @@
         <br>
 
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <label for="situacionLaboral">Situacion Laboral:</label>
                 <input type="text" class="form-control" id="situacionLaboral">
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <label for="ingresos">Ingresos Mensuales:</label>
                 <input type="number" class="form-control" id="ingresos">
             </div>
+
+            <div class="col-sm-3">
+                <label for="cTipoTarjeta">Tipo Tarjeta:</label>
+                <select class="form-control" id="cTipoTarjeta">
+                    <option value="Amex">American Express</option>
+                    <option value="Visa">Master Card</option>
+                    <option value="Master">Visa</option>
+                </select>
+            </div>
         </div>
         <br>
-        
-        <input type="button" class="btn btn-success" value="Confirmar"  OnClick="location.href='DatosAdicionales'">
-
-        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo" onclick="validarCasado(estadoCivil.value);">Agregar Conyuge</button>
-        <div id="demo" class="collapse">
+        <div id="mostrarDatosConyuge" class="collapse">
             <br>
             <div class="row">
                 <div class="col-sm-3">
@@ -174,6 +179,9 @@
                 </div>
             </div>
         </div>
+        <br>
+        <input type="button" class="btn btn-success" value="Confirmar"  OnClick="location.href='DatosAdicionales'">
+        <button type="button" class="btn btn-info" onclick="validarCasado(estadoCivil.value);">Agregar Conyuge</button>        
     </div>
 </body>
 </html>
