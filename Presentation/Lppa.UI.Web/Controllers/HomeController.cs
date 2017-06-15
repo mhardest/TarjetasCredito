@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Lppa.UI.Process;
+using Lppa.Entities.Domain;
+
 
 namespace Lppa.UI.Web.Controllers
 {
     public class HomeController : Controller
     {
+
+        
         public ActionResult Index()
         {
             return View();
@@ -33,14 +38,16 @@ namespace Lppa.UI.Web.Controllers
 
             return View();
         }
+        
 
+     
         public ActionResult DatosAdicionales()
         {
             ViewBag.Message = "Datos Adicionales.";
 
             return View();
         }
-
+        
         public ActionResult TarjetaAdicional()
         {
             ViewBag.Message = "Alta Tarjeta Adicional.";

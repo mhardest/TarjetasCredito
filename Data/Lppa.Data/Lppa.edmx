@@ -1,0 +1,1541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Lppa.Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClienteTitular">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DNIConyuge" Type="nvarchar" MaxLength="255" />
+          <Property Name="NombreConyuge" Type="nvarchar" MaxLength="255" />
+          <Property Name="ApellidoConyuge" Type="nvarchar" MaxLength="255" />
+          <Property Name="DNI" Type="int" Nullable="false" />
+          <Property Name="CUIT" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="FechaDeNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Nacionalidad" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="EstadoCivilId" Type="bigint" Nullable="false" />
+          <Property Name="Sexo" Type="int" Nullable="false" />
+          <Property Name="IngresosMensuales" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Ocupacion" Type="nvarchar" MaxLength="500" />
+          <Property Name="DireccionId" Type="bigint" Nullable="false" />
+          <Property Name="TelefonoCelular_CodigoArea" Type="int" Nullable="false" />
+          <Property Name="TelefonoCelular_Numero" Type="bigint" Nullable="false" />
+          <Property Name="TelefonoParticular_CodigoArea" Type="int" Nullable="false" />
+          <Property Name="TelefonoParticular_Numero" Type="bigint" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CuentaBancaria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TitularId" Type="bigint" Nullable="false" />
+          <Property Name="Banco" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CuentaCorriente" Type="nvarchar" MaxLength="500" />
+          <Property Name="CuentaDeAhorro" Type="nvarchar" MaxLength="500" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Calle" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="30" />
+          <Property Name="CodigoPostal" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Departamento" Type="nvarchar" MaxLength="10" />
+          <Property Name="Localidad" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Pais" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmisorTarjetaCredito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EstadoCivil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Firmas">
+          <Key>
+            <PropertyRef Name="SolicitudId" />
+          </Key>
+          <Property Name="SolicitudId" Type="bigint" Nullable="false" />
+          <Property Name="Imagen" Type="varbinary(max)" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fotos">
+          <Key>
+            <PropertyRef Name="SolicitudId" />
+          </Key>
+          <Property Name="SolicitudId" Type="bigint" Nullable="false" />
+          <Property Name="Imagen" Type="varbinary(max)" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Localidades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="ProvinciaId" Type="bigint" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Paises">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PaisId" Type="bigint" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PuntosDeVentas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoReferencia" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Telefono_CodigoArea" Type="int" Nullable="false" />
+          <Property Name="Telefono_Numero" Type="bigint" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="DireccionId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Solicitudes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+          <Property Name="FechaUltimaModificacion" Type="datetime" />
+          <Property Name="EstadoSolicitud" Type="int" Nullable="false" />
+          <Property Name="TitularId" Type="bigint" Nullable="false" />
+          <Property Name="TarjetaDeCreditoId" Type="bigint" Nullable="false" />
+          <Property Name="PuntoDeVentaId" Type="bigint" Nullable="false" />
+          <Property Name="ServicioEstatal" Type="nvarchar(max)" />
+          <Property Name="Observacion" Type="nvarchar(max)" />
+          <Property Name="AceptaRecibirEstadoCuentaEnCorreoElectronico" Type="bit" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TarjetaDeCredito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="CodigoSeguridad" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="FechaDeVencimiento" Type="datetime" Nullable="false" />
+          <Property Name="FechaDeCreacion" Type="datetime" Nullable="false" />
+          <Property Name="EstadoTarjeta" Type="int" Nullable="false" />
+          <Property Name="NombreTitular" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Limite" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Internacional" Type="bit" Nullable="false" />
+          <Property Name="FechaAnulacion" Type="datetime" />
+          <Property Name="EmisorTarjetaCreditoId" Type="bigint" Nullable="false" />
+          <Property Name="TitularId" Type="bigint" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TitularExtensiones">
+          <Key>
+            <PropertyRef Name="TarjetaDeCreditoId" />
+          </Key>
+          <Property Name="TarjetaDeCreditoId" Type="bigint" Nullable="false" />
+          <Property Name="TitularId" Type="bigint" Nullable="false" />
+          <Property Name="DNI" Type="int" Nullable="false" />
+          <Property Name="CUIT" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="FechaDeNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Nacionalidad" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="EstadoCivilId" Type="bigint" Nullable="false" />
+          <Property Name="Sexo" Type="int" Nullable="false" />
+          <Property Name="IngresosMensuales" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Ocupacion" Type="nvarchar" MaxLength="500" />
+          <Property Name="DireccionId" Type="bigint" Nullable="false" />
+          <Property Name="TelefonoCelular_CodigoArea" Type="int" Nullable="false" />
+          <Property Name="TelefonoCelular_Numero" Type="bigint" Nullable="false" />
+          <Property Name="TelefonoParticular_CodigoArea" Type="int" Nullable="false" />
+          <Property Name="TelefonoParticular_Numero" Type="bigint" Nullable="false" />
+          <Property Name="RowId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ChangedOn" Type="datetime" />
+          <Property Name="ChangedBy" Type="uniqueidentifier" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="uniqueidentifier" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_CuentasBancaria_dbo_Titulares_TitularId">
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="1" />
+          <End Role="CuentaBancaria" Type="Self.CuentaBancaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteTitular">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CuentaBancaria">
+              <PropertyRef Name="TitularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Firmas_dbo_Solicitudes_SolicitudId">
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Firmas" Type="Self.Firmas" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitudes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Firmas">
+              <PropertyRef Name="SolicitudId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Fotos_dbo_Solicitudes_SolicitudId">
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Fotos" Type="Self.Fotos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitudes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Fotos">
+              <PropertyRef Name="SolicitudId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Localidades_dbo_Provincias_ProvinciaId">
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Localidades">
+              <PropertyRef Name="ProvinciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Provincias_dbo_Paises_PaisId">
+          <End Role="Paises" Type="Self.Paises" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paises">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Provincias">
+              <PropertyRef Name="PaisId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1" />
+          <End Role="PuntosDeVentas" Type="Self.PuntosDeVentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PuntosDeVentas">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId">
+          <End Role="PuntosDeVentas" Type="Self.PuntosDeVentas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PuntosDeVentas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="PuntoDeVentaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId">
+          <End Role="TarjetaDeCredito" Type="Self.TarjetaDeCredito" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TarjetaDeCredito">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="TarjetaDeCreditoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Solicitudes_dbo_Titulares_TitularId">
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="1" />
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteTitular">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="TitularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId">
+          <End Role="EmisorTarjetaCredito" Type="Self.EmisorTarjetaCredito" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TarjetaDeCredito" Type="Self.TarjetaDeCredito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmisorTarjetaCredito">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TarjetaDeCredito">
+              <PropertyRef Name="EmisorTarjetaCreditoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId">
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="1" />
+          <End Role="TarjetaDeCredito" Type="Self.TarjetaDeCredito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteTitular">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TarjetaDeCredito">
+              <PropertyRef Name="TitularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id">
+          <End Role="TitularExtensiones" Type="Self.TitularExtensiones" Multiplicity="1" />
+          <End Role="TarjetaDeCredito" Type="Self.TarjetaDeCredito" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TitularExtensiones">
+              <PropertyRef Name="TarjetaDeCreditoId" />
+            </Principal>
+            <Dependent Role="TarjetaDeCredito">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Titulares_dbo_Direccion_DireccionId">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClienteTitular">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClienteTitular">
+              <PropertyRef Name="EstadoCivilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TitularExtensiones" Type="Self.TitularExtensiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitularExtensiones">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TitularExtensiones" Type="Self.TitularExtensiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitularExtensiones">
+              <PropertyRef Name="EstadoCivilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TitularExtensiones_dbo_Titulares_TitularId">
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="1" />
+          <End Role="TitularExtensiones" Type="Self.TitularExtensiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteTitular">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitularExtensiones">
+              <PropertyRef Name="TitularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LppaModelStoreContainer">
+          <EntitySet Name="ClienteTitular" EntityType="Self.ClienteTitular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CuentaBancaria" EntityType="Self.CuentaBancaria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmisorTarjetaCredito" EntityType="Self.EmisorTarjetaCredito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Firmas" EntityType="Self.Firmas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fotos" EntityType="Self.Fotos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PuntosDeVentas" EntityType="Self.PuntosDeVentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Solicitudes" EntityType="Self.Solicitudes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TarjetaDeCredito" EntityType="Self.TarjetaDeCredito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TitularExtensiones" EntityType="Self.TitularExtensiones" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_CuentasBancaria_dbo_Titulares_TitularId" Association="Self.FK_dbo_CuentasBancaria_dbo_Titulares_TitularId">
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+            <End Role="CuentaBancaria" EntitySet="CuentaBancaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Firmas_dbo_Solicitudes_SolicitudId" Association="Self.FK_dbo_Firmas_dbo_Solicitudes_SolicitudId">
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+            <End Role="Firmas" EntitySet="Firmas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Fotos_dbo_Solicitudes_SolicitudId" Association="Self.FK_dbo_Fotos_dbo_Solicitudes_SolicitudId">
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+            <End Role="Fotos" EntitySet="Fotos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Localidades_dbo_Provincias_ProvinciaId" Association="Self.FK_dbo_Localidades_dbo_Provincias_ProvinciaId">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Localidades" EntitySet="Localidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Provincias_dbo_Paises_PaisId" Association="Self.FK_dbo_Provincias_dbo_Paises_PaisId">
+            <End Role="Paises" EntitySet="Paises" />
+            <End Role="Provincias" EntitySet="Provincias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId" Association="Self.FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="PuntosDeVentas" EntitySet="PuntosDeVentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId" Association="Self.FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId">
+            <End Role="PuntosDeVentas" EntitySet="PuntosDeVentas" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId" Association="Self.FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId">
+            <End Role="TarjetaDeCredito" EntitySet="TarjetaDeCredito" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Solicitudes_dbo_Titulares_TitularId" Association="Self.FK_dbo_Solicitudes_dbo_Titulares_TitularId">
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId" Association="Self.FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId">
+            <End Role="EmisorTarjetaCredito" EntitySet="EmisorTarjetaCredito" />
+            <End Role="TarjetaDeCredito" EntitySet="TarjetaDeCredito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId" Association="Self.FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId">
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+            <End Role="TarjetaDeCredito" EntitySet="TarjetaDeCredito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id" Association="Self.FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id">
+            <End Role="TitularExtensiones" EntitySet="TitularExtensiones" />
+            <End Role="TarjetaDeCredito" EntitySet="TarjetaDeCredito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Titulares_dbo_Direccion_DireccionId" Association="Self.FK_dbo_Titulares_dbo_Direccion_DireccionId">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId" Association="Self.FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId">
+            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId" Association="Self.FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="TitularExtensiones" EntitySet="TitularExtensiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId" Association="Self.FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId">
+            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+            <End Role="TitularExtensiones" EntitySet="TitularExtensiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TitularExtensiones_dbo_Titulares_TitularId" Association="Self.FK_dbo_TitularExtensiones_dbo_Titulares_TitularId">
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+            <End Role="TitularExtensiones" EntitySet="TitularExtensiones" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Lppa.Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClienteTitular">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNIConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NombreConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ApellidoConyuge" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DNI" Type="Int32" Nullable="false" />
+          <Property Name="CUIT" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaDeNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EstadoCivilId" Type="Int64" Nullable="false" />
+          <Property Name="Sexo" Type="Int32" Nullable="false" />
+          <Property Name="IngresosMensuales" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Ocupacion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionId" Type="Int64" Nullable="false" />
+          <Property Name="TelefonoCelular_CodigoArea" Type="Int32" Nullable="false" />
+          <Property Name="TelefonoCelular_Numero" Type="Int64" Nullable="false" />
+          <Property Name="TelefonoParticular_CodigoArea" Type="Int32" Nullable="false" />
+          <Property Name="TelefonoParticular_Numero" Type="Int64" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CuentaBancaria" Relationship="Self.FK_dbo_CuentasBancaria_dbo_Titulares_TitularId" FromRole="ClienteTitular" ToRole="CuentaBancaria" />
+          <NavigationProperty Name="Solicitudes" Relationship="Self.FK_dbo_Solicitudes_dbo_Titulares_TitularId" FromRole="ClienteTitular" ToRole="Solicitudes" />
+          <NavigationProperty Name="TarjetaDeCredito" Relationship="Self.FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId" FromRole="ClienteTitular" ToRole="TarjetaDeCredito" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK_dbo_Titulares_dbo_Direccion_DireccionId" FromRole="ClienteTitular" ToRole="Direccion" />
+          <NavigationProperty Name="EstadoCivil" Relationship="Self.FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId" FromRole="ClienteTitular" ToRole="EstadoCivil" />
+          <NavigationProperty Name="TitularExtensiones" Relationship="Self.FK_dbo_TitularExtensiones_dbo_Titulares_TitularId" FromRole="ClienteTitular" ToRole="TitularExtensiones" />
+        </EntityType>
+        <EntityType Name="CuentaBancaria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TitularId" Type="Int64" Nullable="false" />
+          <Property Name="Banco" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CuentaCorriente" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CuentaDeAhorro" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ClienteTitular" Relationship="Self.FK_dbo_CuentasBancaria_dbo_Titulares_TitularId" FromRole="CuentaBancaria" ToRole="ClienteTitular" />
+        </EntityType>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Calle" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Departamento" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Localidad" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Provincia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Pais" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ClienteTitular" Relationship="Self.FK_dbo_Titulares_dbo_Direccion_DireccionId" FromRole="Direccion" ToRole="ClienteTitular" />
+          <NavigationProperty Name="PuntosDeVentas" Relationship="Self.FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId" FromRole="Direccion" ToRole="PuntosDeVentas" />
+          <NavigationProperty Name="TitularExtensiones" Relationship="Self.FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId" FromRole="Direccion" ToRole="TitularExtensiones" />
+        </EntityType>
+        <EntityType Name="EmisorTarjetaCredito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TarjetaDeCredito" Relationship="Self.FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId" FromRole="EmisorTarjetaCredito" ToRole="TarjetaDeCredito" />
+        </EntityType>
+        <EntityType Name="EstadoCivil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ClienteTitular" Relationship="Self.FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId" FromRole="EstadoCivil" ToRole="ClienteTitular" />
+          <NavigationProperty Name="TitularExtensiones" Relationship="Self.FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId" FromRole="EstadoCivil" ToRole="TitularExtensiones" />
+        </EntityType>
+        <EntityType Name="Firmas">
+          <Key>
+            <PropertyRef Name="SolicitudId" />
+          </Key>
+          <Property Name="SolicitudId" Type="Int64" Nullable="false" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Solicitudes" Relationship="Self.FK_dbo_Firmas_dbo_Solicitudes_SolicitudId" FromRole="Firmas" ToRole="Solicitudes" />
+        </EntityType>
+        <EntityType Name="Fotos">
+          <Key>
+            <PropertyRef Name="SolicitudId" />
+          </Key>
+          <Property Name="SolicitudId" Type="Int64" Nullable="false" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Solicitudes" Relationship="Self.FK_dbo_Fotos_dbo_Solicitudes_SolicitudId" FromRole="Fotos" ToRole="Solicitudes" />
+        </EntityType>
+        <EntityType Name="Localidades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinciaId" Type="Int64" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Provincias" Relationship="Self.FK_dbo_Localidades_dbo_Provincias_ProvinciaId" FromRole="Localidades" ToRole="Provincias" />
+        </EntityType>
+        <EntityType Name="Paises">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Provincias" Relationship="Self.FK_dbo_Provincias_dbo_Paises_PaisId" FromRole="Paises" ToRole="Provincias" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PaisId" Type="Int64" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="Self.FK_dbo_Localidades_dbo_Provincias_ProvinciaId" FromRole="Provincias" ToRole="Localidades" />
+          <NavigationProperty Name="Paises" Relationship="Self.FK_dbo_Provincias_dbo_Paises_PaisId" FromRole="Provincias" ToRole="Paises" />
+        </EntityType>
+        <EntityType Name="PuntosDeVentas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoReferencia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono_CodigoArea" Type="Int32" Nullable="false" />
+          <Property Name="Telefono_Numero" Type="Int64" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DireccionId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId" FromRole="PuntosDeVentas" ToRole="Direccion" />
+          <NavigationProperty Name="Solicitudes" Relationship="Self.FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId" FromRole="PuntosDeVentas" ToRole="Solicitudes" />
+        </EntityType>
+        <EntityType Name="Solicitudes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaUltimaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="EstadoSolicitud" Type="Int32" Nullable="false" />
+          <Property Name="TitularId" Type="Int64" Nullable="false" />
+          <Property Name="TarjetaDeCreditoId" Type="Int64" Nullable="false" />
+          <Property Name="PuntoDeVentaId" Type="Int64" Nullable="false" />
+          <Property Name="ServicioEstatal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AceptaRecibirEstadoCuentaEnCorreoElectronico" Type="Boolean" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ClienteTitular" Relationship="Self.FK_dbo_Solicitudes_dbo_Titulares_TitularId" FromRole="Solicitudes" ToRole="ClienteTitular" />
+          <NavigationProperty Name="Firmas" Relationship="Self.FK_dbo_Firmas_dbo_Solicitudes_SolicitudId" FromRole="Solicitudes" ToRole="Firmas" />
+          <NavigationProperty Name="Fotos" Relationship="Self.FK_dbo_Fotos_dbo_Solicitudes_SolicitudId" FromRole="Solicitudes" ToRole="Fotos" />
+          <NavigationProperty Name="PuntosDeVentas" Relationship="Self.FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId" FromRole="Solicitudes" ToRole="PuntosDeVentas" />
+          <NavigationProperty Name="TarjetaDeCredito" Relationship="Self.FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId" FromRole="Solicitudes" ToRole="TarjetaDeCredito" />
+        </EntityType>
+        <EntityType Name="TarjetaDeCredito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Numero" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodigoSeguridad" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaDeVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaDeCreacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstadoTarjeta" Type="Int32" Nullable="false" />
+          <Property Name="NombreTitular" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Limite" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Internacional" Type="Boolean" Nullable="false" />
+          <Property Name="FechaAnulacion" Type="DateTime" Precision="3" />
+          <Property Name="EmisorTarjetaCreditoId" Type="Int64" Nullable="false" />
+          <Property Name="TitularId" Type="Int64" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ClienteTitular" Relationship="Self.FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId" FromRole="TarjetaDeCredito" ToRole="ClienteTitular" />
+          <NavigationProperty Name="EmisorTarjetaCredito" Relationship="Self.FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId" FromRole="TarjetaDeCredito" ToRole="EmisorTarjetaCredito" />
+          <NavigationProperty Name="Solicitudes" Relationship="Self.FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId" FromRole="TarjetaDeCredito" ToRole="Solicitudes" />
+          <NavigationProperty Name="TitularExtensiones" Relationship="Self.FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id" FromRole="TarjetaDeCredito" ToRole="TitularExtensiones" />
+        </EntityType>
+        <EntityType Name="TitularExtensiones">
+          <Key>
+            <PropertyRef Name="TarjetaDeCreditoId" />
+          </Key>
+          <Property Name="TarjetaDeCreditoId" Type="Int64" Nullable="false" />
+          <Property Name="TitularId" Type="Int64" Nullable="false" />
+          <Property Name="DNI" Type="Int32" Nullable="false" />
+          <Property Name="CUIT" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaDeNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nacionalidad" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EstadoCivilId" Type="Int64" Nullable="false" />
+          <Property Name="Sexo" Type="Int32" Nullable="false" />
+          <Property Name="IngresosMensuales" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Ocupacion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionId" Type="Int64" Nullable="false" />
+          <Property Name="TelefonoCelular_CodigoArea" Type="Int32" Nullable="false" />
+          <Property Name="TelefonoCelular_Numero" Type="Int64" Nullable="false" />
+          <Property Name="TelefonoParticular_CodigoArea" Type="Int32" Nullable="false" />
+          <Property Name="TelefonoParticular_Numero" Type="Int64" Nullable="false" />
+          <Property Name="RowId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" Nullable="false" />
+          <Property Name="ChangedOn" Type="DateTime" Precision="3" />
+          <Property Name="ChangedBy" Type="Guid" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Guid" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ClienteTitular" Relationship="Self.FK_dbo_TitularExtensiones_dbo_Titulares_TitularId" FromRole="TitularExtensiones" ToRole="ClienteTitular" />
+          <NavigationProperty Name="Direccion" Relationship="Self.FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId" FromRole="TitularExtensiones" ToRole="Direccion" />
+          <NavigationProperty Name="EstadoCivil" Relationship="Self.FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId" FromRole="TitularExtensiones" ToRole="EstadoCivil" />
+          <NavigationProperty Name="TarjetaDeCredito" Relationship="Self.FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id" FromRole="TitularExtensiones" ToRole="TarjetaDeCredito" />
+        </EntityType>
+        <Association Name="FK_dbo_CuentasBancaria_dbo_Titulares_TitularId">
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="1" />
+          <End Role="CuentaBancaria" Type="Self.CuentaBancaria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteTitular">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CuentaBancaria">
+              <PropertyRef Name="TitularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Solicitudes_dbo_Titulares_TitularId">
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="1" />
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteTitular">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="TitularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId">
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="1" />
+          <End Role="TarjetaDeCredito" Type="Self.TarjetaDeCredito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteTitular">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TarjetaDeCredito">
+              <PropertyRef Name="TitularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Titulares_dbo_Direccion_DireccionId">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClienteTitular">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClienteTitular">
+              <PropertyRef Name="EstadoCivilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TitularExtensiones_dbo_Titulares_TitularId">
+          <End Role="ClienteTitular" Type="Self.ClienteTitular" Multiplicity="1" />
+          <End Role="TitularExtensiones" Type="Self.TitularExtensiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteTitular">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitularExtensiones">
+              <PropertyRef Name="TitularId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1" />
+          <End Role="PuntosDeVentas" Type="Self.PuntosDeVentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PuntosDeVentas">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId">
+          <End Role="Direccion" Type="Self.Direccion" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TitularExtensiones" Type="Self.TitularExtensiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitularExtensiones">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId">
+          <End Role="EmisorTarjetaCredito" Type="Self.EmisorTarjetaCredito" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TarjetaDeCredito" Type="Self.TarjetaDeCredito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmisorTarjetaCredito">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TarjetaDeCredito">
+              <PropertyRef Name="EmisorTarjetaCreditoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId">
+          <End Role="EstadoCivil" Type="Self.EstadoCivil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TitularExtensiones" Type="Self.TitularExtensiones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoCivil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitularExtensiones">
+              <PropertyRef Name="EstadoCivilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Firmas_dbo_Solicitudes_SolicitudId">
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Firmas" Type="Self.Firmas" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitudes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Firmas">
+              <PropertyRef Name="SolicitudId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Fotos_dbo_Solicitudes_SolicitudId">
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Fotos" Type="Self.Fotos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitudes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Fotos">
+              <PropertyRef Name="SolicitudId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Localidades_dbo_Provincias_ProvinciaId">
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Localidades">
+              <PropertyRef Name="ProvinciaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Provincias_dbo_Paises_PaisId">
+          <End Role="Paises" Type="Self.Paises" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paises">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Provincias">
+              <PropertyRef Name="PaisId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId">
+          <End Role="PuntosDeVentas" Type="Self.PuntosDeVentas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PuntosDeVentas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="PuntoDeVentaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId">
+          <End Role="TarjetaDeCredito" Type="Self.TarjetaDeCredito" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TarjetaDeCredito">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="TarjetaDeCreditoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id">
+          <End Role="TitularExtensiones" Type="Self.TitularExtensiones" Multiplicity="1" />
+          <End Role="TarjetaDeCredito" Type="Self.TarjetaDeCredito" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TitularExtensiones">
+              <PropertyRef Name="TarjetaDeCreditoId" />
+            </Principal>
+            <Dependent Role="TarjetaDeCredito">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SATCContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClienteTitular" EntityType="Self.ClienteTitular" />
+          <EntitySet Name="CuentaBancaria" EntityType="Self.CuentaBancaria" />
+          <EntitySet Name="Direccion" EntityType="Self.Direccion" />
+          <EntitySet Name="EmisorTarjetaCredito" EntityType="Self.EmisorTarjetaCredito" />
+          <EntitySet Name="EstadoCivil" EntityType="Self.EstadoCivil" />
+          <EntitySet Name="Firmas" EntityType="Self.Firmas" />
+          <EntitySet Name="Fotos" EntityType="Self.Fotos" />
+          <EntitySet Name="Localidades" EntityType="Self.Localidades" />
+          <EntitySet Name="Paises" EntityType="Self.Paises" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincias" />
+          <EntitySet Name="PuntosDeVentas" EntityType="Self.PuntosDeVentas" />
+          <EntitySet Name="Solicitudes" EntityType="Self.Solicitudes" />
+          <EntitySet Name="TarjetaDeCredito" EntityType="Self.TarjetaDeCredito" />
+          <EntitySet Name="TitularExtensiones" EntityType="Self.TitularExtensiones" />
+          <AssociationSet Name="FK_dbo_CuentasBancaria_dbo_Titulares_TitularId" Association="Self.FK_dbo_CuentasBancaria_dbo_Titulares_TitularId">
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+            <End Role="CuentaBancaria" EntitySet="CuentaBancaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Solicitudes_dbo_Titulares_TitularId" Association="Self.FK_dbo_Solicitudes_dbo_Titulares_TitularId">
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId" Association="Self.FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId">
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+            <End Role="TarjetaDeCredito" EntitySet="TarjetaDeCredito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Titulares_dbo_Direccion_DireccionId" Association="Self.FK_dbo_Titulares_dbo_Direccion_DireccionId">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId" Association="Self.FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId">
+            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TitularExtensiones_dbo_Titulares_TitularId" Association="Self.FK_dbo_TitularExtensiones_dbo_Titulares_TitularId">
+            <End Role="ClienteTitular" EntitySet="ClienteTitular" />
+            <End Role="TitularExtensiones" EntitySet="TitularExtensiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId" Association="Self.FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="PuntosDeVentas" EntitySet="PuntosDeVentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId" Association="Self.FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="TitularExtensiones" EntitySet="TitularExtensiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId" Association="Self.FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId">
+            <End Role="EmisorTarjetaCredito" EntitySet="EmisorTarjetaCredito" />
+            <End Role="TarjetaDeCredito" EntitySet="TarjetaDeCredito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId" Association="Self.FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId">
+            <End Role="EstadoCivil" EntitySet="EstadoCivil" />
+            <End Role="TitularExtensiones" EntitySet="TitularExtensiones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Firmas_dbo_Solicitudes_SolicitudId" Association="Self.FK_dbo_Firmas_dbo_Solicitudes_SolicitudId">
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+            <End Role="Firmas" EntitySet="Firmas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Fotos_dbo_Solicitudes_SolicitudId" Association="Self.FK_dbo_Fotos_dbo_Solicitudes_SolicitudId">
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+            <End Role="Fotos" EntitySet="Fotos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Localidades_dbo_Provincias_ProvinciaId" Association="Self.FK_dbo_Localidades_dbo_Provincias_ProvinciaId">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Localidades" EntitySet="Localidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Provincias_dbo_Paises_PaisId" Association="Self.FK_dbo_Provincias_dbo_Paises_PaisId">
+            <End Role="Paises" EntitySet="Paises" />
+            <End Role="Provincias" EntitySet="Provincias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId" Association="Self.FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId">
+            <End Role="PuntosDeVentas" EntitySet="PuntosDeVentas" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId" Association="Self.FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId">
+            <End Role="TarjetaDeCredito" EntitySet="TarjetaDeCredito" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id" Association="Self.FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id">
+            <End Role="TitularExtensiones" EntitySet="TitularExtensiones" />
+            <End Role="TarjetaDeCredito" EntitySet="TarjetaDeCredito" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LppaModelStoreContainer" CdmEntityContainer="SATCContext">
+          <EntitySetMapping Name="ClienteTitular">
+            <EntityTypeMapping TypeName="Lppa.Model.ClienteTitular">
+              <MappingFragment StoreEntitySet="ClienteTitular">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DNIConyuge" ColumnName="DNIConyuge" />
+                <ScalarProperty Name="NombreConyuge" ColumnName="NombreConyuge" />
+                <ScalarProperty Name="ApellidoConyuge" ColumnName="ApellidoConyuge" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="FechaDeNacimiento" ColumnName="FechaDeNacimiento" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="EstadoCivilId" ColumnName="EstadoCivilId" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="IngresosMensuales" ColumnName="IngresosMensuales" />
+                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+                <ScalarProperty Name="TelefonoCelular_CodigoArea" ColumnName="TelefonoCelular_CodigoArea" />
+                <ScalarProperty Name="TelefonoCelular_Numero" ColumnName="TelefonoCelular_Numero" />
+                <ScalarProperty Name="TelefonoParticular_CodigoArea" ColumnName="TelefonoParticular_CodigoArea" />
+                <ScalarProperty Name="TelefonoParticular_Numero" ColumnName="TelefonoParticular_Numero" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CuentaBancaria">
+            <EntityTypeMapping TypeName="Lppa.Model.CuentaBancaria">
+              <MappingFragment StoreEntitySet="CuentaBancaria">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+                <ScalarProperty Name="Banco" ColumnName="Banco" />
+                <ScalarProperty Name="CuentaCorriente" ColumnName="CuentaCorriente" />
+                <ScalarProperty Name="CuentaDeAhorro" ColumnName="CuentaDeAhorro" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccion">
+            <EntityTypeMapping TypeName="Lppa.Model.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Localidad" ColumnName="Localidad" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmisorTarjetaCredito">
+            <EntityTypeMapping TypeName="Lppa.Model.EmisorTarjetaCredito">
+              <MappingFragment StoreEntitySet="EmisorTarjetaCredito">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoCivil">
+            <EntityTypeMapping TypeName="Lppa.Model.EstadoCivil">
+              <MappingFragment StoreEntitySet="EstadoCivil">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Firmas">
+            <EntityTypeMapping TypeName="Lppa.Model.Firmas">
+              <MappingFragment StoreEntitySet="Firmas">
+                <ScalarProperty Name="SolicitudId" ColumnName="SolicitudId" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fotos">
+            <EntityTypeMapping TypeName="Lppa.Model.Fotos">
+              <MappingFragment StoreEntitySet="Fotos">
+                <ScalarProperty Name="SolicitudId" ColumnName="SolicitudId" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Localidades">
+            <EntityTypeMapping TypeName="Lppa.Model.Localidades">
+              <MappingFragment StoreEntitySet="Localidades">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ProvinciaId" ColumnName="ProvinciaId" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paises">
+            <EntityTypeMapping TypeName="Lppa.Model.Paises">
+              <MappingFragment StoreEntitySet="Paises">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincias">
+            <EntityTypeMapping TypeName="Lppa.Model.Provincias">
+              <MappingFragment StoreEntitySet="Provincias">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PuntosDeVentas">
+            <EntityTypeMapping TypeName="Lppa.Model.PuntosDeVentas">
+              <MappingFragment StoreEntitySet="PuntosDeVentas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodigoReferencia" ColumnName="CodigoReferencia" />
+                <ScalarProperty Name="Telefono_CodigoArea" ColumnName="Telefono_CodigoArea" />
+                <ScalarProperty Name="Telefono_Numero" ColumnName="Telefono_Numero" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitudes">
+            <EntityTypeMapping TypeName="Lppa.Model.Solicitudes">
+              <MappingFragment StoreEntitySet="Solicitudes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="FechaUltimaModificacion" ColumnName="FechaUltimaModificacion" />
+                <ScalarProperty Name="EstadoSolicitud" ColumnName="EstadoSolicitud" />
+                <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+                <ScalarProperty Name="TarjetaDeCreditoId" ColumnName="TarjetaDeCreditoId" />
+                <ScalarProperty Name="PuntoDeVentaId" ColumnName="PuntoDeVentaId" />
+                <ScalarProperty Name="ServicioEstatal" ColumnName="ServicioEstatal" />
+                <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+                <ScalarProperty Name="AceptaRecibirEstadoCuentaEnCorreoElectronico" ColumnName="AceptaRecibirEstadoCuentaEnCorreoElectronico" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TarjetaDeCredito">
+            <EntityTypeMapping TypeName="Lppa.Model.TarjetaDeCredito">
+              <MappingFragment StoreEntitySet="TarjetaDeCredito">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="CodigoSeguridad" ColumnName="CodigoSeguridad" />
+                <ScalarProperty Name="FechaDeVencimiento" ColumnName="FechaDeVencimiento" />
+                <ScalarProperty Name="FechaDeCreacion" ColumnName="FechaDeCreacion" />
+                <ScalarProperty Name="EstadoTarjeta" ColumnName="EstadoTarjeta" />
+                <ScalarProperty Name="NombreTitular" ColumnName="NombreTitular" />
+                <ScalarProperty Name="Limite" ColumnName="Limite" />
+                <ScalarProperty Name="Internacional" ColumnName="Internacional" />
+                <ScalarProperty Name="FechaAnulacion" ColumnName="FechaAnulacion" />
+                <ScalarProperty Name="EmisorTarjetaCreditoId" ColumnName="EmisorTarjetaCreditoId" />
+                <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TitularExtensiones">
+            <EntityTypeMapping TypeName="Lppa.Model.TitularExtensiones">
+              <MappingFragment StoreEntitySet="TitularExtensiones">
+                <ScalarProperty Name="TarjetaDeCreditoId" ColumnName="TarjetaDeCreditoId" />
+                <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="FechaDeNacimiento" ColumnName="FechaDeNacimiento" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+                <ScalarProperty Name="EstadoCivilId" ColumnName="EstadoCivilId" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="IngresosMensuales" ColumnName="IngresosMensuales" />
+                <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+                <ScalarProperty Name="TelefonoCelular_CodigoArea" ColumnName="TelefonoCelular_CodigoArea" />
+                <ScalarProperty Name="TelefonoCelular_Numero" ColumnName="TelefonoCelular_Numero" />
+                <ScalarProperty Name="TelefonoParticular_CodigoArea" ColumnName="TelefonoParticular_CodigoArea" />
+                <ScalarProperty Name="TelefonoParticular_Numero" ColumnName="TelefonoParticular_Numero" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ChangedOn" ColumnName="ChangedOn" />
+                <ScalarProperty Name="ChangedBy" ColumnName="ChangedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

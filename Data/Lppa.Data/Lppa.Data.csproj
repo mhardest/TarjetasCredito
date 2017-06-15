@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
@@ -39,17 +47,89 @@
       <HintPath>..\..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\DALClienteTitular.cs" />
+    <Compile Include="Clases\DALSolicitud.cs" />
+    <Compile Include="ClienteTitular.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CuentaBancaria.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessComponent.cs" />
+    <Compile Include="Direccion.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmisorTarjetaCredito.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoCivil.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Firmas.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fotos.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IABM.cs" />
+    <Compile Include="Localidades.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lppa.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lppa.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lppa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lppa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lppa.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Mapper\MapperGenerico.cs" />
+    <Compile Include="Paises.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provincias.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PuntosDeVentas.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitudes.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TarjetaDeCredito.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitularExtensiones.cs">
+      <DependentUpon>Lppa.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Lppa.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Lppa.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Lppa.edmx.diagram">
+      <DependentUpon>Lppa.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="web.config" />
   </ItemGroup>
@@ -62,6 +142,21 @@
       <Project>{52AD26CB-1207-4147-9728-E9C5D6D2DE85}</Project>
       <Name>Lppa.Framework</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lppa.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Lppa.edmx</DependentUpon>
+      <LastGenOutput>Lppa.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Lppa.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Lppa.edmx</DependentUpon>
+      <LastGenOutput>Lppa.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

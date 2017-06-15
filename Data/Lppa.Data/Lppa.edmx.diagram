@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2083d381ed9945309a3ac1965c430008" Name="Diagram1">
+        <EntityTypeShape EntityType="Lppa.Model.ClienteTitular" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.CuentaBancaria" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.Direccion" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.EmisorTarjetaCredito" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.EstadoCivil" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.Firmas" Width="1.5" PointX="7.5" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.Fotos" Width="1.5" PointX="7.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.Localidades" Width="1.5" PointX="13.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.Paises" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.Provincias" Width="1.5" PointX="11" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.PuntosDeVentas" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.Solicitudes" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.TarjetaDeCredito" Width="1.5" PointX="8.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Lppa.Model.TitularExtensiones" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_CuentasBancaria_dbo_Titulares_TitularId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Solicitudes_dbo_Titulares_TitularId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_TarjetaDeCredito_dbo_Titulares_TitularId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Titulares_dbo_Direccion_DireccionId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Titulares_dbo_EstadoCiviles_EstadoCivilId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_TitularExtensiones_dbo_Titulares_TitularId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_PuntosDeVentas_dbo_Direccion_DireccionId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_TitularExtensiones_dbo_Direccion_DireccionId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_TarjetaDeCredito_dbo_EmisorTarjetaCredito_EmisorTarjetaCreditoId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_TitularExtensiones_dbo_EstadoCivil_EstadoCivilId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Firmas_dbo_Solicitudes_SolicitudId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Fotos_dbo_Solicitudes_SolicitudId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Localidades_dbo_Provincias_ProvinciaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Provincias_dbo_Paises_PaisId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Solicitudes_dbo_PuntosDeVentas_PuntoDeVentaId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_Solicitudes_dbo_TarjetaDeCredito_TarjetaDeCreditoId" ManuallyRouted="false" />
+        <AssociationConnector Association="Lppa.Model.FK_dbo_TarjetaDeCredito_dbo_TitularExtensiones_Id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

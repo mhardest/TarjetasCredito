@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AltaSolicitudController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -253,7 +254,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\AltaSolicitud.cshtml" />
+    <Content Include="Views\AltaSolicitud\Create.cshtml" />
     <Content Include="Views\Home\DatosAdicionales.cshtml" />
     <Content Include="Views\Home\TarjetaAdicional.cshtml" />
   </ItemGroup>
@@ -271,6 +272,10 @@
     <ProjectReference Include="..\..\Shared\Lppa.Entities\Lppa.Entities.csproj">
       <Project>{ADF8BD8B-5CB1-47A5-A9BB-F85DCD93DCA5}</Project>
       <Name>Lppa.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Lppa.Framework\Lppa.Framework.csproj">
+      <Project>{52ad26cb-1207-4147-9728-e9c5d6d2de85}</Project>
+      <Name>Lppa.Framework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lppa.UI.Process\Lppa.UI.Process.csproj">
       <Project>{C012F673-E586-47C3-B7E3-C11C86C28F2B}</Project>
