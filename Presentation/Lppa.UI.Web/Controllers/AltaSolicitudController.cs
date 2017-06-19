@@ -26,7 +26,7 @@ namespace Lppa.UI.Web.Controllers
         public ActionResult Create(Solicitud solicitud)
 
         {
-            solicitud.Titular.Apellido = Request.Form.Get("nombre");
+            solicitud.Titular.Apellido = Request.Form["apellidoNombre"];
             PSol.Create(solicitud);
             return RedirectToAction("Index");
         }
